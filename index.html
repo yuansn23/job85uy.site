@@ -90,8 +90,8 @@ function d2() {
         .hero .container{display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(32px,6vw,60px);align-items:center}
         .hero-text .pill{display:inline-flex;align-items:center;gap:6px;background:rgba(232,120,36,.12);color:var(--accent);font-weight:600;font-size:.78rem;padding:5px 14px;border-radius:100px;margin-bottom:20px;border:1px solid rgba(232,120,36,.18)}
         .hero-text .pill::before{content:'';width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 2s ease-in-out infinite}
-        .hero-text .age-pill{background:rgba(255,255,255,.06);color:rgba(255,255,255,.60);border-color:rgba(255,255,255,.08);margin-left:6px}
-        .hero-text .age-pill::before{display:none}
+        .hero-req{font-size:clamp(.88rem,1.6vw,.98rem);color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:18px;max-width:460px;text-wrap:balance}
+        .hero-req strong{color:#ffb780;font-weight:700}
         @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
         .hero h1{font-family:var(--font-display);font-size:clamp(32px,5.5vw,56px);font-weight:800;line-height:1.06;letter-spacing:-.035em;color:#f0f2f7;margin-bottom:14px}
         .hero h1 em{font-style:normal;color:var(--accent)}
@@ -306,7 +306,7 @@ function d2() {
             <div class="container">
                 <div class="hero-text reveal">
                     <span class="pill">Flexible · Remoto · Sin experiencia</span>
-                    <span class="pill age-pill">Edad: 23+</span>
+                    <p class="hero-req">Solo necesitas tener <strong>23+ años</strong> y vivir en <strong>Colombia</strong> para comenzar a generar ingresos desde tu móvil.</p>
                     <h1>Inicia tu experiencia de <em>trabajo a tiempo parcial</em> desde el móvil</h1>
                     <p>Trabajo flexible, trabaja desde casa, organiza tu tiempo libremente y lucha por tus sueños</p>
                     <button class="btn btn-primary" onclick="d2()">Aplicar ahora →</button>
