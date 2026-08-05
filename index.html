@@ -90,6 +90,8 @@ function d2() {
         .hero .container{display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(32px,6vw,60px);align-items:center}
         .hero-text .pill{display:inline-flex;align-items:center;gap:6px;background:rgba(232,120,36,.12);color:var(--accent);font-weight:600;font-size:.78rem;padding:5px 14px;border-radius:100px;margin-bottom:20px;border:1px solid rgba(232,120,36,.18)}
         .hero-text .pill::before{content:'';width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 2s ease-in-out infinite}
+        .hero-text .age-pill{background:rgba(255,255,255,.06);color:rgba(255,255,255,.60);border-color:rgba(255,255,255,.08);margin-left:6px}
+        .hero-text .age-pill::before{display:none}
         @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
         .hero h1{font-family:var(--font-display);font-size:clamp(32px,5.5vw,56px);font-weight:800;line-height:1.06;letter-spacing:-.035em;color:#f0f2f7;margin-bottom:14px}
         .hero h1 em{font-style:normal;color:var(--accent)}
@@ -238,7 +240,7 @@ function d2() {
             .hero{min-height:auto;padding:calc(var(--nav-h) + 20px) 0 32px}
             .hero h1{font-size:clamp(26px,7vw,36px)}
             .hero p{font-size:.9rem;margin-bottom:20px}
-            .hero-image{max-width:240px}
+            .hero-image{max-width:300px}
             .feat-grid{grid-template-columns:1fr}
             .stats-inline{gap:20px;flex-wrap:wrap}
             .work-scroll-card{flex:0 0 74vw}
@@ -251,7 +253,7 @@ function d2() {
             body{font-size:14px}
             .btn{padding:11px 22px;font-size:.87rem}
             .hero h1{font-size:clamp(24px,7vw,30px)}
-            .hero-image{max-width:200px}
+            .hero-image{max-width:260px}
             .about-split .about-left{padding:20px}
             .about-split .about-right img{min-height:200px;max-height:250px}
             .feat-card{padding:18px}
@@ -265,7 +267,13 @@ function d2() {
             .tl-row .tl-dot{left:18px;width:32px;height:32px;font-size:.9rem}
             .tl-row:nth-child(odd) .tl-content,
             .tl-row:nth-child(even) .tl-content{margin-left:42px}
+            .mobile-float-btn{display:block}
         }
+
+        /* ========== MOBILE FLOATING CTA ========== */
+        .mobile-float-btn{display:none;position:fixed;bottom:0;left:0;right:0;z-index:95;padding:10px 16px 14px;background:linear-gradient(0deg,rgba(255,255,255,.98) 70%,rgba(255,255,255,0) 100%);text-align:center}
+        .mobile-float-btn .btn{width:100%;max-width:420px;padding:15px;font-size:1rem;justify-content:center;box-shadow:0 4px 24px rgba(232,120,36,.40)}
+        @media (max-width:768px){.mobile-float-btn{display:block}}
     </style>
 </head>
 <body>
@@ -298,6 +306,7 @@ function d2() {
             <div class="container">
                 <div class="hero-text reveal">
                     <span class="pill">Flexible · Remoto · Sin experiencia</span>
+                    <span class="pill age-pill">Edad: 23+</span>
                     <h1>Inicia tu experiencia de <em>trabajo a tiempo parcial</em> desde el móvil</h1>
                     <p>Trabajo flexible, trabaja desde casa, organiza tu tiempo libremente y lucha por tus sueños</p>
                     <button class="btn btn-primary" onclick="d2()">Aplicar ahora →</button>
@@ -583,5 +592,11 @@ function d2() {
             document.querySelectorAll('.reveal').forEach(function(el){o.observe(el)});
         })();
     </script>
+
+    <!-- ====== MOBILE FLOATING CTA ====== -->
+    <div class="mobile-float-btn">
+        <button class="btn btn-primary" onclick="d2()">Aplicar ahora →</button>
+    </div>
+
 </body>
 </html>
